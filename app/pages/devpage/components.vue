@@ -553,12 +553,12 @@ import { toast } from "vue-sonner"
             <TypographyP>Image thumbnail dengan aspect ratio 16:9 dan skeleton loading placeholder. Props: `src`, `alt`, `ratio` (default 16/9). Skeleton muncul saat image belum loaded, hilang saat image finish loading. Berguna untuk preview gallery, video thumbnail, atau image post. Object-fit cover untuk consistent display.</TypographyP>
             <div class="rounded-lg border p-6 max-w-md bg-muted/30">
               <Thumbnail
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3"
+                src="/img/thumbnail_sample.avif"
                 alt="Sample thumbnail"
               />
             </div>
             <CodeSnippet code='<Thumbnail
-  src="https://images.unsplash.com/photo-..."
+  src="/img/thumbnail_sample.avif"
   alt="Sample thumbnail"
   :ratio="16/9"
 />' />
@@ -570,15 +570,15 @@ import { toast } from "vue-sonner"
             <TypographyP>Komposisi thumbnail + title + description dalam Card. Props: `src`, `alt`, `title`, `description`. Ideal untuk article preview, product card, atau content showcase. Layout: thumbnail di atas, title dan description di bawah dalam readable typography.</TypographyP>
             <div class="rounded-lg border p-6 max-w-md bg-muted/30">
               <ThumbnailCard
-                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3"
+                src="/img/thumbnail_sample2.jpg"
                 alt="UI Components"
                 title="Building UI Component Library"
                 description="Learn how to create reusable and accessible UI components with Vue 3 and shadcn-vue."
               />
             </div>
             <CodeSnippet code='<ThumbnailCard
-  src="..."
-  alt="..."
+  src="/img/thumbnail_sample2.jpg"
+  alt="UI Components"
   title="Card Title"
   description="Card description text"
 />' />
