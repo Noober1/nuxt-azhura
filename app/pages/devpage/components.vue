@@ -100,12 +100,15 @@ function scrollToSection(id: string) {
               <Button size="lg">Large</Button>
               <Button size="icon">A</Button>
             </div>
-            <CodeSnippet code='<Button>Default</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="destructive">Destructive</Button>
-<Button variant="outline">Outline</Button>
-<Button variant="ghost">Ghost</Button>
-<Button variant="link">Link</Button>' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Button&gt;Default&lt;/Button&gt;
+&lt;Button variant="secondary"&gt;Secondary&lt;/Button&gt;
+&lt;Button variant="destructive"&gt;Destructive&lt;/Button&gt;
+&lt;Button variant="outline"&gt;Outline&lt;/Button&gt;
+&lt;Button variant="ghost"&gt;Ghost&lt;/Button&gt;
+&lt;Button variant="link"&gt;Link&lt;/Button&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Button Group -->
@@ -130,11 +133,14 @@ function scrollToSection(id: string) {
                 </ButtonGroup>
               </div>
             </div>
-            <CodeSnippet code='<ButtonGroup orientation="horizontal">
-  <Button variant="outline">Left</Button>
-  <Button variant="outline">Center</Button>
-  <Button variant="outline">Right</Button>
-</ButtonGroup>' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;ButtonGroup orientation=&quot;horizontal&quot;&gt;
+  &lt;Button variant=&quot;outline&quot;&gt;Left&lt;/Button&gt;
+  &lt;Button variant=&quot;outline&quot;&gt;Center&lt;/Button&gt;
+  &lt;Button variant=&quot;outline&quot;&gt;Right&lt;/Button&gt;
+&lt;/ButtonGroup&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Toggle Button -->
@@ -152,12 +158,15 @@ function scrollToSection(id: string) {
                 <span>Disabled</span>
               </Toggle>
             </div>
-            <CodeSnippet code='<Toggle default-pressed>
-  <span>Pressed</span>
-</Toggle>
-<Toggle>
-  <span>Not Pressed</span>
-</Toggle>' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Toggle default-pressed&gt;
+  &lt;span&gt;Pressed&lt;/span&gt;
+&lt;/Toggle&gt;
+&lt;Toggle&gt;
+  &lt;span&gt;Not Pressed&lt;/span&gt;
+&lt;/Toggle&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Slider Button -->
@@ -173,16 +182,19 @@ function scrollToSection(id: string) {
                 </div>
               </div>
             </div>
-            <CodeSnippet code='<script setup>
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;script setup&gt;
 const sliderValue = ref([25])
-</script>
+&lt;/script&gt;
 
-<template>
-  <div class="flex gap-4 items-center">
-    <Slider v-model="sliderValue" :min="0" :max="100" class="flex-1" />
-    <span>{{ sliderValue[0] }}%</span>
-  </div>
-</template>' />
+&lt;template&gt;
+  &lt;div class=&quot;flex gap-4 items-center&quot;&gt;
+    &lt;Slider v-model=&quot;sliderValue&quot; :min=&quot;0&quot; :max=&quot;100&quot; class=&quot;flex-1&quot; /&gt;
+    &lt;span&gt;{{ sliderValue[0] }}%&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/template&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Number Input -->
@@ -193,13 +205,16 @@ const sliderValue = ref([25])
               <NumberInput v-model="numberValue" :min="0" :max="10" :step="1" />
               <TypographyMuted>Current: {{ numberValue }}</TypographyMuted>
             </div>
-            <CodeSnippet code='<script setup>
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;script setup&gt;
 const numberValue = ref(5)
-</script>
+&lt;/script&gt;
 
-<template>
-  <NumberInput v-model="numberValue" :min="0" :max="10" :step="1" />
-</template>' />
+&lt;template&gt;
+  &lt;NumberInput v-model=&quot;numberValue&quot; :min=&quot;0&quot; :max=&quot;10&quot; :step=&quot;1&quot; /&gt;
+&lt;/template&gt;</code></pre>
+            </div>
           </article>
         </section>
 
@@ -234,11 +249,14 @@ const numberValue = ref(5)
                 <Textarea id="textarea-input" placeholder="Enter your message here..." rows="3" class="mt-2" />
               </div>
             </div>
-            <CodeSnippet code='<Label htmlFor="email">Email</Label>
-<Input id="email" type="email" placeholder="your@email.com" />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Label htmlFor=&quot;email&quot;&gt;Email&lt;/Label&gt;
+&lt;Input id=&quot;email&quot; type=&quot;email&quot; placeholder=&quot;your@email.com&quot; /&gt;
 
-<Label htmlFor="msg">Message</Label>
-<Textarea id="msg" placeholder="Enter message..." rows="3" />' />
+&lt;Label htmlFor=&quot;msg&quot;&gt;Message&lt;/Label&gt;
+&lt;Textarea id=&quot;msg&quot; placeholder=&quot;Enter message...&quot; rows=&quot;3&quot; /&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Select -->
@@ -258,15 +276,18 @@ const numberValue = ref(5)
                 </SelectContent>
               </Select>
             </div>
-            <CodeSnippet code='<Select>
-  <SelectTrigger>
-    <SelectValue placeholder="Select..." />
-  </SelectTrigger>
-  <SelectContent>
-    <SelectItem value="1">Option 1</SelectItem>
-    <SelectItem value="2">Option 2</SelectItem>
-  </SelectContent>
-</Select>' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Select&gt;
+  &lt;SelectTrigger&gt;
+    &lt;SelectValue placeholder=&quot;Select...&quot; /&gt;
+  &lt;/SelectTrigger&gt;
+  &lt;SelectContent&gt;
+    &lt;SelectItem value=&quot;1&quot;&gt;Option 1&lt;/SelectItem&gt;
+    &lt;SelectItem value=&quot;2&quot;&gt;Option 2&lt;/SelectItem&gt;
+  &lt;/SelectContent&gt;
+&lt;/Select&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Combo Box -->
@@ -302,21 +323,24 @@ const numberValue = ref(5)
                 </PopoverContent>
               </Popover>
             </div>
-            <CodeSnippet code='<Popover>
-  <PopoverTrigger as-child>
-    <Button variant="outline">
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Popover&gt;
+  &lt;PopoverTrigger as-child&gt;
+    &lt;Button variant=&quot;outline&quot;&gt;
       Select framework...
-    </Button>
-  </PopoverTrigger>
-  <PopoverContent class="p-0">
-    <Command>
-      <CommandInput placeholder="Search..." />
-      <CommandList>
-        <CommandItem value="vue">Vue 3</CommandItem>
-      </CommandList>
-    </Command>
-  </PopoverContent>
-</Popover>' />
+    &lt;/Button&gt;
+  &lt;/PopoverTrigger&gt;
+  &lt;PopoverContent class=&quot;p-0&quot;&gt;
+    &lt;Command&gt;
+      &lt;CommandInput placeholder=&quot;Search...&quot; /&gt;
+      &lt;CommandList&gt;
+        &lt;CommandItem value=&quot;vue&quot;&gt;Vue 3&lt;/CommandItem&gt;
+      &lt;/CommandList&gt;
+    &lt;/Command&gt;
+  &lt;/PopoverContent&gt;
+&lt;/Popover&gt;</code></pre>
+            </div>
           </article>
         </section>
 
@@ -347,19 +371,22 @@ const numberValue = ref(5)
                 </AlertDescription>
               </Alert>
             </div>
-            <CodeSnippet code='<Alert>
-  <AlertTitle>Heads up!</AlertTitle>
-  <AlertDescription>
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Alert&gt;
+  &lt;AlertTitle&gt;Heads up!&lt;/AlertTitle&gt;
+  &lt;AlertDescription&gt;
     This is an informational message.
-  </AlertDescription>
-</Alert>
+  &lt;/AlertDescription&gt;
+&lt;/Alert&gt;
 
-<Alert variant="destructive">
-  <AlertTitle>Error!</AlertTitle>
-  <AlertDescription>
+&lt;Alert variant=&quot;destructive&quot;&gt;
+  &lt;AlertTitle&gt;Error!&lt;/AlertTitle&gt;
+  &lt;AlertDescription&gt;
     An error occurred.
-  </AlertDescription>
-</Alert>' />
+  &lt;/AlertDescription&gt;
+&lt;/Alert&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Alert Radio -->
@@ -375,21 +402,24 @@ const numberValue = ref(5)
               />
               <TypographyMuted class="mt-4">Selected: {{ alertRadioValue }}</TypographyMuted>
             </div>
-            <CodeSnippet code='<script setup>
-const selected = ref("option1")
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;script setup&gt;
+const selected = ref(&quot;option1&quot;)
 const options = [
-  { value: "option1", label: "Option 1" },
-  { value: "option2", label: "Option 2" }
+  { value: &quot;option1&quot;, label: &quot;Option 1&quot; },
+  { value: &quot;option2&quot;, label: &quot;Option 2&quot; }
 ]
-</script>
+&lt;/script&gt;
 
-<template>
-  <AlertRadio
-    v-model="selected"
-    title="Choose"
-    :options="options"
-  />
-</template>' />
+&lt;template&gt;
+  &lt;AlertRadio
+    v-model=&quot;selected&quot;
+    title=&quot;Choose&quot;
+    :options=&quot;options&quot;
+  /&gt;
+&lt;/template&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Progress -->
@@ -410,9 +440,12 @@ const options = [
                 <Progress :model-value="100" />
               </div>
             </div>
-            <CodeSnippet code='<Progress :model-value="45" />
-<Progress :model-value="75" />
-<Progress :model-value="100" />' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Progress :model-value=&quot;45&quot; /&gt;
+&lt;Progress :model-value=&quot;75&quot; /&gt;
+&lt;Progress :model-value=&quot;100&quot; /&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Spinner -->
@@ -433,9 +466,12 @@ const options = [
                 <TypographyMuted class="mt-2">Large</TypographyMuted>
               </div>
             </div>
-            <CodeSnippet code='<Spinner size="sm" />
-<Spinner size="md" />
-<Spinner size="lg" />' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Spinner size=&quot;sm&quot; /&gt;
+&lt;Spinner size=&quot;md&quot; /&gt;
+&lt;Spinner size=&quot;lg&quot; /&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Sonner Toast -->
@@ -468,15 +504,18 @@ const options = [
                 Info Toast
               </Button>
             </div>
-            <CodeSnippet code='<script setup>
-import { toast } from "vue-sonner"
-</script>
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;script setup&gt;
+import { toast } from &quot;vue-sonner&quot;
+&lt;/script&gt;
 
-<template>
-  <Button @click="toast.success(\"Success!\")">
+&lt;template&gt;
+  &lt;Button @click=&quot;toast.success(\&quot;Success!\&quot;)&quot;&gt;
     Show Toast
-  </Button>
-</template>' />
+  &lt;/Button&gt;
+&lt;/template&gt;</code></pre>
+            </div>
           </article>
         </section>
 
@@ -508,10 +547,13 @@ import { toast } from "vue-sonner"
                 <TypographyMuted class="mt-2">Fallback Only</TypographyMuted>
               </div>
             </div>
-            <CodeSnippet code='<Avatar>
-  <AvatarImage src="https://github.com/shadcn.png" />
-  <AvatarFallback>CN</AvatarFallback>
-</Avatar>' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Avatar&gt;
+  &lt;AvatarImage src=&quot;https://github.com/shadcn.png&quot; /&gt;
+  &lt;AvatarFallback&gt;CN&lt;/AvatarFallback&gt;
+&lt;/Avatar&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Card -->
@@ -533,18 +575,21 @@ import { toast } from "vue-sonner"
                 </CardFooter>
               </Card>
             </div>
-            <CodeSnippet code='<Card>
-  <CardHeader>
-    <CardTitle>Title</CardTitle>
-    <CardDescription>Description</CardDescription>
-  </CardHeader>
-  <CardContent>
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Card&gt;
+  &lt;CardHeader&gt;
+    &lt;CardTitle&gt;Title&lt;/CardTitle&gt;
+    &lt;CardDescription&gt;Description&lt;/CardDescription&gt;
+  &lt;/CardHeader&gt;
+  &lt;CardContent&gt;
     Content here
-  </CardContent>
-  <CardFooter>
-    <Button>Action</Button>
-  </CardFooter>
-</Card>' />
+  &lt;/CardContent&gt;
+  &lt;CardFooter&gt;
+    &lt;Button&gt;Action&lt;/Button&gt;
+  &lt;/CardFooter&gt;
+&lt;/Card&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Thumbnail -->
@@ -556,13 +601,16 @@ import { toast } from "vue-sonner"
                 <img src="/img/thumbnail_sample.avif" alt="Sample thumbnail" class="object-cover w-full h-full" />
               </AspectRatio>
             </div>
-            <CodeSnippet code='<AspectRatio :ratio="16/9">
-  <img
-    src="/img/thumbnail_sample.avif"
-    alt="Sample thumbnail"
-    class="object-cover w-full h-full"
-  />
-</AspectRatio>' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;AspectRatio :ratio=&quot;16/9&quot;&gt;
+  &lt;img
+    src=&quot;/img/thumbnail_sample.avif&quot;
+    alt=&quot;Sample thumbnail&quot;
+    class=&quot;object-cover w-full h-full&quot;
+  /&gt;
+&lt;/AspectRatio&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Thumbnail with Title & Description -->
@@ -580,19 +628,22 @@ import { toast } from "vue-sonner"
                 </CardContent>
               </Card>
             </div>
-            <CodeSnippet code='<Card>
-  <AspectRatio :ratio="16/9" class="rounded-t-lg">
-    <img
-      src="/img/image.jpg"
-      alt="Card image"
-      class="object-cover w-full h-full"
-    />
-  </AspectRatio>
-  <CardContent class="pt-4">
-    <h4>Card Title</h4>
-    <p>Card description</p>
-  </CardContent>
-</Card>' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Card&gt;
+  &lt;AspectRatio :ratio=&quot;16/9&quot; class=&quot;rounded-t-lg&quot;&gt;
+    &lt;img
+      src=&quot;/img/image.jpg&quot;
+      alt=&quot;Card image&quot;
+      class=&quot;object-cover w-full h-full&quot;
+    /&gt;
+  &lt;/AspectRatio&gt;
+  &lt;CardContent class=&quot;pt-4&quot;&gt;
+    &lt;h4&gt;Card Title&lt;/h4&gt;
+    &lt;p&gt;Card description&lt;/p&gt;
+  &lt;/CardContent&gt;
+&lt;/Card&gt;</code></pre>
+            </div>
           </article>
 
           <!-- List -->
@@ -602,17 +653,20 @@ import { toast } from "vue-sonner"
             <div class="rounded-lg border p-6 bg-muted/30">
               <List :items="listItems" variant="unordered" />
             </div>
-            <CodeSnippet code='<script setup>
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;script setup&gt;
 const items = [
-  "Build component showcase",
-  "Create documentation",
-  "Add examples"
+  &quot;Build component showcase&quot;,
+  &quot;Create documentation&quot;,
+  &quot;Add examples&quot;
 ]
-</script>
+&lt;/script&gt;
 
-<template>
-  <List :items="items" variant="unordered" />
-</template>' />
+&lt;template&gt;
+  &lt;List :items=&quot;items&quot; variant=&quot;unordered&quot; /&gt;
+&lt;/template&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Code Snippet -->
@@ -631,10 +685,13 @@ const items = [
                 language="vue"
               />
             </div>
-            <CodeSnippet code='<CodeSnippet
-  code="<Button>Click</Button>"
-  language="vue"
-/>' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;CodeSnippet
+  code=&quot;&lt;Button&gt;Click&lt;/Button&gt;&quot;
+  language=&quot;vue&quot;
+/&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Typography -->
@@ -649,13 +706,16 @@ const items = [
               <TypographyInlineCode>const value = 42</TypographyInlineCode>
               <TypographyBlockquote>This is a blockquote dengan styling khusus dan border left.</TypographyBlockquote>
             </div>
-            <CodeSnippet code='<TypographyH1>Heading 1</TypographyH1>
-<TypographyH2>Heading 2</TypographyH2>
-<TypographyH3>Heading 3</TypographyH3>
-<TypographyH4>Heading 4</TypographyH4>
-<TypographyP>Paragraph text</TypographyP>
-<TypographyLead>Lead text</TypographyLead>
-<TypographyMuted>Muted text</TypographyMuted>' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;TypographyH1&gt;Heading 1&lt;/TypographyH1&gt;
+&lt;TypographyH2&gt;Heading 2&lt;/TypographyH2&gt;
+&lt;TypographyH3&gt;Heading 3&lt;/TypographyH3&gt;
+&lt;TypographyH4&gt;Heading 4&lt;/TypographyH4&gt;
+&lt;TypographyP&gt;Paragraph text&lt;/TypographyP&gt;
+&lt;TypographyLead&gt;Lead text&lt;/TypographyLead&gt;
+&lt;TypographyMuted&gt;Muted text&lt;/TypographyMuted&gt;</code></pre>
+            </div>
           </article>
         </section>
 
@@ -711,18 +771,21 @@ const items = [
                 </TabsContent>
               </Tabs>
             </div>
-            <CodeSnippet code='<Tabs default-value="tab1">
-  <TabsList>
-    <TabsTrigger value="tab1">Tab 1</TabsTrigger>
-    <TabsTrigger value="tab2">Tab 2</TabsTrigger>
-  </TabsList>
-  <TabsContent value="tab1">
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Tabs default-value=&quot;tab1&quot;&gt;
+  &lt;TabsList&gt;
+    &lt;TabsTrigger value=&quot;tab1&quot;&gt;Tab 1&lt;/TabsTrigger&gt;
+    &lt;TabsTrigger value=&quot;tab2&quot;&gt;Tab 2&lt;/TabsTrigger&gt;
+  &lt;/TabsList&gt;
+  &lt;TabsContent value=&quot;tab1&quot;&gt;
     Content 1
-  </TabsContent>
-  <TabsContent value="tab2">
+  &lt;/TabsContent&gt;
+  &lt;TabsContent value=&quot;tab2&quot;&gt;
     Content 2
-  </TabsContent>
-</Tabs>' />
+  &lt;/TabsContent&gt;
+&lt;/Tabs&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Stepper -->
@@ -732,17 +795,20 @@ const items = [
             <div class="rounded-lg border p-6 space-y-6 bg-muted/30">
               <Stepper :steps="['Step 1', 'Step 2', 'Step 3', 'Step 4']" :model-value="currentStep" @update:model-value="(v) => currentStep = v" />
             </div>
-            <CodeSnippet code='<script setup>
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;script setup&gt;
 const currentStep = ref(1)
-</script>
+&lt;/script&gt;
 
-<template>
-  <Stepper
-    :steps="[\"Step 1\", \"Step 2\", \"Step 3\"]"
-    :model-value="currentStep"
-    @update:model-value="(v) => currentStep = v"
-  />
-</template>' />
+&lt;template&gt;
+  &lt;Stepper
+    :steps=&quot;[\&quot;Step 1\&quot;, \&quot;Step 2\&quot;, \&quot;Step 3\&quot;]&quot;
+    :model-value=&quot;currentStep&quot;
+    @update:model-value=&quot;(v) =&gt; currentStep = v&quot;
+  /&gt;
+&lt;/template&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Pagination -->
@@ -758,18 +824,21 @@ const currentStep = ref(1)
               />
               <TypographyMuted>Current page: {{ currentPage }}</TypographyMuted>
             </div>
-            <CodeSnippet code='<script setup>
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;script setup&gt;
 const currentPage = ref(1)
-</script>
+&lt;/script&gt;
 
-<template>
-  <Pagination
-    :page="currentPage"
-    :total-items="50"
-    :items-per-page="10"
-    :max-visible-buttons="5"
-  />
-</template>' />
+&lt;template&gt;
+  &lt;Pagination
+    :page=&quot;currentPage&quot;
+    :total-items=&quot;50&quot;
+    :items-per-page=&quot;10&quot;
+    :max-visible-buttons=&quot;5&quot;
+  /&gt;
+&lt;/template&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Carousel -->
@@ -789,17 +858,20 @@ const currentPage = ref(1)
                 <CarouselNext />
               </Carousel>
             </div>
-            <CodeSnippet code='<Carousel class="w-full">
-  <CarouselContent>
-    <CarouselItem v-for="i in 5" :key="i">
-      <div class="aspect-video flex items-center justify-center bg-muted">
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Carousel class=&quot;w-full&quot;&gt;
+  &lt;CarouselContent&gt;
+    &lt;CarouselItem v-for=&quot;i in 5&quot; :key=&quot;i&quot;&gt;
+      &lt;div class=&quot;aspect-video flex items-center justify-center bg-muted&quot;&gt;
         Slide {{ i }}
-      </div>
-    </CarouselItem>
-  </CarouselContent>
-  <CarouselPrevious />
-  <CarouselNext />
-</Carousel>' />
+      &lt;/div&gt;
+    &lt;/CarouselItem&gt;
+  &lt;/CarouselContent&gt;
+  &lt;CarouselPrevious /&gt;
+  &lt;CarouselNext /&gt;
+&lt;/Carousel&gt;</code></pre>
+            </div>
           </article>
         </section>
 
@@ -838,22 +910,25 @@ const currentPage = ref(1)
                 </DrawerContent>
               </Drawer>
             </div>
-            <CodeSnippet code='<Drawer>
-  <DrawerTrigger as-child>
-    <Button>Open Drawer</Button>
-  </DrawerTrigger>
-  <DrawerContent>
-    <DrawerHeader>
-      <DrawerTitle>Title</DrawerTitle>
-    </DrawerHeader>
-    <div class="p-4">Content</div>
-    <DrawerFooter>
-      <DrawerClose as-child>
-        <Button variant="outline">Close</Button>
-      </DrawerClose>
-    </DrawerFooter>
-  </DrawerContent>
-</Drawer>' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;Drawer&gt;
+  &lt;DrawerTrigger as-child&gt;
+    &lt;Button&gt;Open Drawer&lt;/Button&gt;
+  &lt;/DrawerTrigger&gt;
+  &lt;DrawerContent&gt;
+    &lt;DrawerHeader&gt;
+      &lt;DrawerTitle&gt;Title&lt;/DrawerTitle&gt;
+    &lt;/DrawerHeader&gt;
+    &lt;div class=&quot;p-4&quot;&gt;Content&lt;/div&gt;
+    &lt;DrawerFooter&gt;
+      &lt;DrawerClose as-child&gt;
+        &lt;Button variant=&quot;outline&quot;&gt;Close&lt;/Button&gt;
+      &lt;/DrawerClose&gt;
+    &lt;/DrawerFooter&gt;
+  &lt;/DrawerContent&gt;
+&lt;/Drawer&gt;</code></pre>
+            </div>
           </article>
 
           <!-- Hover Card -->
@@ -879,14 +954,17 @@ const currentPage = ref(1)
                 </HoverCardContent>
               </HoverCard>
             </div>
-            <CodeSnippet code='<HoverCard>
-  <HoverCardTrigger as-child>
-    <Button variant="link">@shadcn</Button>
-  </HoverCardTrigger>
-  <HoverCardContent>
-    <div>Preview content here</div>
-  </HoverCardContent>
-</HoverCard>' />
+            <div class="rounded-lg border bg-muted/50 overflow-hidden">
+              <div class="px-4 py-2 border-b bg-muted/70 text-sm font-mono text-muted-foreground">vue</div>
+              <pre class="p-4 font-mono text-xs max-h-96 overflow-auto bg-background whitespace-pre-wrap"><code>&lt;HoverCard&gt;
+  &lt;HoverCardTrigger as-child&gt;
+    &lt;Button variant=&quot;link&quot;&gt;@shadcn&lt;/Button&gt;
+  &lt;/HoverCardTrigger&gt;
+  &lt;HoverCardContent&gt;
+    &lt;div&gt;Preview content here&lt;/div&gt;
+  &lt;/HoverCardContent&gt;
+&lt;/HoverCard&gt;</code></pre>
+            </div>
           </article>
         </section>
 
