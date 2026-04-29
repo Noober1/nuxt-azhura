@@ -552,16 +552,17 @@ import { toast } from "vue-sonner"
             <TypographyH3>Thumbnail</TypographyH3>
             <TypographyP>Image thumbnail dengan aspect ratio 16:9 dan skeleton loading placeholder. Props: `src`, `alt`, `ratio` (default 16/9). Skeleton muncul saat image belum loaded, hilang saat image finish loading. Berguna untuk preview gallery, video thumbnail, atau image post. Object-fit cover untuk consistent display.</TypographyP>
             <div class="rounded-lg border p-6 max-w-md bg-muted/30">
-              <Thumbnail
-                src="/img/thumbnail_sample.avif"
-                alt="Sample thumbnail"
-              />
+              <AspectRatio :ratio="16/9" class="relative overflow-hidden bg-muted">
+                <img src="/img/thumbnail_sample.avif" alt="Sample thumbnail" class="object-cover w-full h-full" />
+              </AspectRatio>
             </div>
-            <CodeSnippet code='<Thumbnail
-  src="/img/thumbnail_sample.avif"
-  alt="Sample thumbnail"
-  :ratio="16/9"
-/>' />
+            <CodeSnippet code='<AspectRatio :ratio="16/9">
+  <img
+    src="/img/thumbnail_sample.avif"
+    alt="Sample thumbnail"
+    class="object-cover w-full h-full"
+  />
+</AspectRatio>' />
           </article>
 
           <!-- Thumbnail with Title & Description -->
@@ -569,19 +570,29 @@ import { toast } from "vue-sonner"
             <TypographyH3>Thumbnail with Title & Description</TypographyH3>
             <TypographyP>Komposisi thumbnail + title + description dalam Card. Props: `src`, `alt`, `title`, `description`. Ideal untuk article preview, product card, atau content showcase. Layout: thumbnail di atas, title dan description di bawah dalam readable typography.</TypographyP>
             <div class="rounded-lg border p-6 max-w-md bg-muted/30">
-              <ThumbnailCard
-                src="/img/thumbnail_sample2.jpg"
-                alt="UI Components"
-                title="Building UI Component Library"
-                description="Learn how to create reusable and accessible UI components with Vue 3 and shadcn-vue."
-              />
+              <Card>
+                <AspectRatio :ratio="16/9" class="relative overflow-hidden bg-muted rounded-t-lg">
+                  <img src="/img/thumbnail_sample2.jpg" alt="UI Components" class="object-cover w-full h-full" />
+                </AspectRatio>
+                <CardContent class="pt-4">
+                  <TypographyH4>Building UI Component Library</TypographyH4>
+                  <TypographyMuted class="mt-2">Learn how to create reusable and accessible UI components with Vue 3 and shadcn-vue.</TypographyMuted>
+                </CardContent>
+              </Card>
             </div>
-            <CodeSnippet code='<ThumbnailCard
-  src="/img/thumbnail_sample2.jpg"
-  alt="UI Components"
-  title="Card Title"
-  description="Card description text"
-/>' />
+            <CodeSnippet code='<Card>
+  <AspectRatio :ratio="16/9" class="rounded-t-lg">
+    <img
+      src="/img/image.jpg"
+      alt="Card image"
+      class="object-cover w-full h-full"
+    />
+  </AspectRatio>
+  <CardContent class="pt-4">
+    <h4>Card Title</h4>
+    <p>Card description</p>
+  </CardContent>
+</Card>' />
           </article>
 
           <!-- List -->
