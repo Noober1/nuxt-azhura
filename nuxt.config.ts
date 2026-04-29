@@ -9,12 +9,10 @@ export default defineNuxtConfig({
       title: "Azhura",
       titleTemplate: "%s | Azhura",
       meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Deskripsi halaman Azhura' },
+        { name: 'description', content: 'Cucu Ruhiyatna, personal website' },
         { name: 'author', content: 'Azhura' },
         { property: 'og:title', content: 'Azhura' },
-        { property: 'og:description', content: 'Deskripsi halaman Azhura' },
+        { property: 'og:description', content: 'Cucu Ruhiyatna, personal website' },
         { property: 'og:type', content: 'website' },
       ]
     }
