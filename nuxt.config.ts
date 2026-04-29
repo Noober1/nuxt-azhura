@@ -21,6 +21,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['./app/assets/css/main.css'],
 
+  modules: ['shadcn-nuxt'],
+
+  shadcn: {
+    prefix: '',
+    componentDir: './app/components/ui',
+  },
+
   vite: {
     optimizeDeps: {
       include: [
