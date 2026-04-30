@@ -12,9 +12,7 @@ import {
 import { Toaster as Sonner } from 'vue-sonner'
 import { cn } from '@/lib/utils'
 
-const props = withDefaults(defineProps<ToasterProps>(), {
-  position: 'bottom-right',
-})
+const props = defineProps<ToasterProps>()
 </script>
 
 <template>
@@ -26,12 +24,12 @@ const props = withDefaults(defineProps<ToasterProps>(), {
       '--normal-border': 'var(--border)',
       '--border-radius': 'var(--radius)',
     }"
-    :position="props.position"
     :toast-options="{
       classes: {
         toast: 'rounded-2xl',
       },
     }"
+    v-bind="props"
   >
     <template #success-icon>
       <CircleCheckIcon class="size-4" />
