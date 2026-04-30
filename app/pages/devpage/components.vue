@@ -140,27 +140,32 @@
 </ButtonGroup>" language="vue" />
           </article>
 
-          <!-- Toggle Button -->
+          <!-- Switch -->
           <article class="space-y-4 flex flex-col">
-            <TypographyH3>Toggle Button</TypographyH3>
-            <TypographyP>Button dengan state on/off yang dapat diset melalui v-model. Ideal untuk feature toggle, dark mode switch, atau preference selection. Props: `defaultPressed`, `disabled`. Event: `update:pressed`. Aksesibilitas: role="button", aria-pressed untuk screen reader.</TypographyP>
-            <div class="rounded-lg border p-6 flex gap-4 bg-muted/30">
-              <Toggle default-pressed>
-                <span>Pressed</span>
-              </Toggle>
-              <Toggle>
-                <span>Not Pressed</span>
-              </Toggle>
-              <Toggle disabled>
-                <span>Disabled</span>
-              </Toggle>
+            <TypographyH3>Switch</TypographyH3>
+            <TypographyP>Switch component untuk on/off state selection dengan visual toggle switch. Ideal untuk preference toggle, feature flag, dark mode switch, atau boolean settings. Props: `checked`, `defaultChecked`, `disabled`. Support v-model untuk two-way binding. Aksesibilitas: role="switch", aria-checked untuk screen reader.</TypographyP>
+            <div class="rounded-lg border p-6 flex flex-col gap-4 bg-muted/30">
+              <div class="flex items-center gap-3">
+                <Switch />
+                <span class="text-sm">Off</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <Switch :defaultChecked="true" />
+                <span class="text-sm">On</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <Switch disabled />
+                <span class="text-sm text-muted-foreground">Disabled</span>
+              </div>
             </div>
-            <CodeSnippet code="<Toggle default-pressed>
-  <span>Pressed</span>
-</Toggle>
-<Toggle>
-  <span>Not Pressed</span>
-</Toggle>" language="vue" />
+            <CodeSnippet code="<div class=&quot;flex items-center gap-3&quot;>
+  <Switch :defaultChecked=&quot;true&quot; />
+  <span>On</span>
+</div>
+<div class=&quot;flex items-center gap-3&quot;>
+  <Switch />
+  <span>Off</span>
+</div>" language="vue" />
           </article>
 
           <!-- Slider Button -->
