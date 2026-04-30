@@ -12,8 +12,8 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), { step: 1 })
 const emit = defineEmits<{ 'update:modelValue': [value: number] }>()
 
-const canDecrement = computed(() => !props.min || props.modelValue > props.min)
-const canIncrement = computed(() => !props.max || props.modelValue < props.max)
+const canDecrement = computed(() => props.min === undefined || props.modelValue > props.min)
+const canIncrement = computed(() => props.max === undefined || props.modelValue < props.max)
 
 function decrement() {
   if (canDecrement.value) {
@@ -24,13 +24,6 @@ function decrement() {
 function increment() {
   if (canIncrement.value) {
     emit('update:modelValue', props.modelValue + props.step)
-  }
-}
-
-function updateValue(e: Event) {
-  const val = parseFloat((e.target as HTMLInputElement).value)
-  if (!isNaN(val)) {
-    emit('update:modelValue', val)
   }
 }
 </script>
@@ -47,8 +40,8 @@ function updateValue(e: Event) {
     </Button>
     <Input
       type="number"
-      :value="modelValue"
-      @input="updateValue"
+      :model-value="modelValue"
+      @update:model-value="emit('update:modelValue', $event)"
       class="w-20 text-center"
     />
     <Button
