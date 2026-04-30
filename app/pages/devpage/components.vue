@@ -769,54 +769,46 @@ const items = [
             <div class="rounded-lg border p-6 space-y-6 bg-muted/30">
               <Stepper v-model="currentStep" class="w-full">
                 <StepperItem :step="1">
-                  <StepperTrigger as-child>
-                    <Button variant="outline" size="icon">
-                      1
-                    </Button>
+                  <StepperTrigger>
+                    <StepperIndicator>1</StepperIndicator>
+                    <div>
+                      <StepperTitle>Address</StepperTitle>
+                      <StepperDescription>Add your address</StepperDescription>
+                    </div>
                   </StepperTrigger>
-                  <div>
-                    <StepperTitle>Address</StepperTitle>
-                    <StepperDescription>Add your address</StepperDescription>
-                  </div>
                   <StepperSeparator />
                 </StepperItem>
 
                 <StepperItem :step="2">
-                  <StepperTrigger as-child>
-                    <Button variant="outline" size="icon">
-                      2
-                    </Button>
+                  <StepperTrigger>
+                    <StepperIndicator>2</StepperIndicator>
+                    <div>
+                      <StepperTitle>Shipping</StepperTitle>
+                      <StepperDescription>Set your preferred shipping</StepperDescription>
+                    </div>
                   </StepperTrigger>
-                  <div>
-                    <StepperTitle>Shipping</StepperTitle>
-                    <StepperDescription>Set your preferred shipping</StepperDescription>
-                  </div>
                   <StepperSeparator />
                 </StepperItem>
 
                 <StepperItem :step="3">
-                  <StepperTrigger as-child>
-                    <Button variant="outline" size="icon">
-                      3
-                    </Button>
+                  <StepperTrigger>
+                    <StepperIndicator>3</StepperIndicator>
+                    <div>
+                      <StepperTitle>Payment</StepperTitle>
+                      <StepperDescription>Add any payment method</StepperDescription>
+                    </div>
                   </StepperTrigger>
-                  <div>
-                    <StepperTitle>Payment</StepperTitle>
-                    <StepperDescription>Add any payment method</StepperDescription>
-                  </div>
                   <StepperSeparator />
                 </StepperItem>
 
                 <StepperItem :step="4">
-                  <StepperTrigger as-child>
-                    <Button variant="outline" size="icon">
-                      4
-                    </Button>
+                  <StepperTrigger>
+                    <StepperIndicator>4</StepperIndicator>
+                    <div>
+                      <StepperTitle>Checkout</StepperTitle>
+                      <StepperDescription>Confirm your order</StepperDescription>
+                    </div>
                   </StepperTrigger>
-                  <div>
-                    <StepperTitle>Checkout</StepperTitle>
-                    <StepperDescription>Confirm your order</StepperDescription>
-                  </div>
                 </StepperItem>
               </Stepper>
             </div>
@@ -827,13 +819,13 @@ const currentStep = ref(1)
 <template>
   <Stepper v-model=&quot;currentStep&quot;>
     <StepperItem :step=&quot;1&quot;>
-      <StepperTrigger as-child>
-        <Button variant=&quot;outline&quot; size=&quot;icon&quot;>1</Button>
+      <StepperTrigger>
+        <StepperIndicator>1</StepperIndicator>
+        <div>
+          <StepperTitle>Address</StepperTitle>
+          <StepperDescription>Add your address</StepperDescription>
+        </div>
       </StepperTrigger>
-      <div>
-        <StepperTitle>Address</StepperTitle>
-        <StepperDescription>Add your address</StepperDescription>
-      </div>
       <StepperSeparator />
     </StepperItem>
   </Stepper>
