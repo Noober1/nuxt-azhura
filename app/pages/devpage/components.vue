@@ -768,60 +768,61 @@ const items = [
             <TypographyP>Multi-step form atau wizard indicator dengan langkah-langkah yang dapat diklik. Terdiri dari Stepper container dengan StepperItem untuk setiap langkah. Setiap step menampilkan icon, title, dan description. Support click-through navigation, menampilkan status (pending, active, completed) per langkah. Ideal untuk sign up flow, checkout process, atau onboarding wizard. Aksesibilitas: keyboard navigation, proper semantic structure.</TypographyP>
             <div class="rounded-lg border p-6 space-y-6 bg-muted/30">
               <Stepper class="flex w-10/12 items-start gap-2">
-    <StepperItem
-      v-for="item in steps"
-      :key="item.step"
-      :step="item.step"
-      class="relative flex w-full flex-col items-center justify-center"
-    >
-      <StepperTrigger>
-        <StepperIndicator v-slot="{ step }" class="bg-muted">
-          <template v-if="item.icon">
-            <component :is="item.icon" class="w-4 h-4" />
-          </template>
-          <span v-else>{{ step }}</span>
-        </StepperIndicator>
-      </StepperTrigger>
-      <StepperSeparator
-        v-if="item.step !== steps[steps.length - 1]?.step"
-        class="absolute left-[calc(50%+20px)] right-[calc(-50%+10px)] top-5 block h-0.5 shrink-0 rounded-full bg-muted group-data-[state=completed]:bg-primary"
-      />
-      <div class="flex flex-col items-center">
-        <StepperTitle>
-          {{ item.title }}
-        </StepperTitle>
-        <StepperDescription>
-          {{ item.description }}
-        </StepperDescription>
-      </div>
-    </StepperItem>
-  </Stepper>
+                <StepperItem
+                  v-for="item in steps"
+                  :key="item.step"
+                  :step="item.step"
+                  class="relative flex w-full flex-col items-center justify-center"
+                >
+                  <StepperTrigger>
+                    <StepperIndicator v-slot="{ step }" class="bg-muted">
+                      <template v-if="item.icon">
+                        <component :is="item.icon" class="w-4 h-4" />
+                      </template>
+                      <span v-else>{{ step }}</span>
+                    </StepperIndicator>
+                  </StepperTrigger>
+                  <StepperSeparator
+                    v-if="item.step !== steps[steps.length - 1]?.step"
+                    class="absolute left-[calc(50%+20px)] right-[calc(-50%+10px)] top-5 block h-0.5 shrink-0 rounded-full bg-muted group-data-[state=completed]:bg-primary"
+                  />
+                  <div class="flex flex-col items-center">
+                    <StepperTitle>
+                      {{ item.title }}
+                    </StepperTitle>
+                    <StepperDescription>
+                      {{ item.description }}
+                    </StepperDescription>
+                  </div>
+                </StepperItem>
+              </Stepper>
             </div>
             <CodeSnippet code="<script setup>
+import { BookUser, Truck, CreditCard } from 'lucide-vue-next'
+
 const currentStep = ref(1)
+const steps = [
+  { step: 1, title: 'Address', description: 'Add your address', icon: BookUser },
+  { step: 2, title: 'Shipping', description: 'Set your preferred', icon: Truck },
+  { step: 3, title: 'Payment', description: 'Add any payment', icon: CreditCard },
+  { step: 4, title: 'Checkout', description: 'Confirm your order' }
+]
 </script>
 
 <template>
   <Stepper v-model=&quot;currentStep&quot;>
-    <StepperItem :step=&quot;1&quot;>
+    <StepperItem v-for=&quot;item in steps&quot; :key=&quot;item.step&quot; :step=&quot;item.step&quot;>
       <StepperTrigger>
-        <StepperIndicator>1</StepperIndicator>
-        <div>
-          <StepperTitle>Address</StepperTitle>
-          <StepperDescription>Add your address</StepperDescription>
-        </div>
+        <StepperIndicator v-slot=&quot;{ step }&quot;>
+          <component v-if=&quot;item.icon&quot; :is=&quot;item.icon&quot; class=&quot;w-4 h-4&quot; />
+          <span v-else>{{ step }}</span>
+        </StepperIndicator>
       </StepperTrigger>
-      <StepperSeparator />
-    </StepperItem>
-    <StepperItem :step=&quot;2&quot;>
-      <StepperTrigger>
-        <StepperIndicator>2</StepperIndicator>
-        <div>
-          <StepperTitle>Shipping</StepperTitle>
-          <StepperDescription>Set your preferred shipping</StepperDescription>
-        </div>
-      </StepperTrigger>
-      <StepperSeparator />
+      <div>
+        <StepperTitle>{{ item.title }}</StepperTitle>
+        <StepperDescription>{{ item.description }}</StepperDescription>
+      </div>
+      <StepperSeparator v-if=&quot;item.step !== steps[steps.length - 1]?.step&quot; />
     </StepperItem>
   </Stepper>
 </template>" language="vue" />
