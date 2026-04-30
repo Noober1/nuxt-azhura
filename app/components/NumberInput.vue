@@ -26,6 +26,17 @@ function increment() {
     emit('update:modelValue', props.modelValue + props.step)
   }
 }
+
+function handleInputChange(value: number) {
+  let newValue = value
+  if (props.min !== undefined && newValue < props.min) {
+    newValue = props.min
+  }
+  if (props.max !== undefined && newValue > props.max) {
+    newValue = props.max
+  }
+  emit('update:modelValue', newValue)
+}
 </script>
 
 <template>
@@ -41,7 +52,7 @@ function increment() {
     <Input
       type="number"
       :model-value="modelValue"
-      @update:model-value="emit('update:modelValue', $event)"
+      @update:model-value="handleInputChange"
       class="w-20 text-center"
     />
     <Button
