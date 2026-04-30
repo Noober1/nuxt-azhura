@@ -767,50 +767,35 @@ const items = [
             <TypographyH3>Stepper</TypographyH3>
             <TypographyP>Multi-step form atau wizard indicator dengan langkah-langkah yang dapat diklik. Terdiri dari Stepper container dengan StepperItem untuk setiap langkah. Setiap step menampilkan icon, title, dan description. Support click-through navigation, menampilkan status (pending, active, completed) per langkah. Ideal untuk sign up flow, checkout process, atau onboarding wizard. Aksesibilitas: keyboard navigation, proper semantic structure.</TypographyP>
             <div class="rounded-lg border p-6 space-y-6 bg-muted/30">
-              <Stepper v-model="currentStep" class="w-full">
-                <StepperItem :step="1">
-                  <StepperTrigger>
-                    <StepperIndicator>1</StepperIndicator>
-                    <div>
-                      <StepperTitle>Address</StepperTitle>
-                      <StepperDescription>Add your address</StepperDescription>
-                    </div>
-                  </StepperTrigger>
-                  <StepperSeparator />
-                </StepperItem>
-
-                <StepperItem :step="2">
-                  <StepperTrigger>
-                    <StepperIndicator>2</StepperIndicator>
-                    <div>
-                      <StepperTitle>Shipping</StepperTitle>
-                      <StepperDescription>Set your preferred shipping</StepperDescription>
-                    </div>
-                  </StepperTrigger>
-                  <StepperSeparator />
-                </StepperItem>
-
-                <StepperItem :step="3">
-                  <StepperTrigger>
-                    <StepperIndicator>3</StepperIndicator>
-                    <div>
-                      <StepperTitle>Payment</StepperTitle>
-                      <StepperDescription>Add any payment method</StepperDescription>
-                    </div>
-                  </StepperTrigger>
-                  <StepperSeparator />
-                </StepperItem>
-
-                <StepperItem :step="4">
-                  <StepperTrigger>
-                    <StepperIndicator>4</StepperIndicator>
-                    <div>
-                      <StepperTitle>Checkout</StepperTitle>
-                      <StepperDescription>Confirm your order</StepperDescription>
-                    </div>
-                  </StepperTrigger>
-                </StepperItem>
-              </Stepper>
+              <Stepper class="flex w-10/12 items-start gap-2">
+    <StepperItem
+      v-for="item in steps"
+      :key="item.step"
+      :step="item.step"
+      class="relative flex w-full flex-col items-center justify-center"
+    >
+      <StepperTrigger>
+        <StepperIndicator v-slot="{ step }" class="bg-muted">
+          <template v-if="item.icon">
+            <component :is="item.icon" class="w-4 h-4" />
+          </template>
+          <span v-else>{{ step }}</span>
+        </StepperIndicator>
+      </StepperTrigger>
+      <StepperSeparator
+        v-if="item.step !== steps[steps.length - 1]?.step"
+        class="absolute left-[calc(50%+20px)] right-[calc(-50%+10px)] top-5 block h-0.5 shrink-0 rounded-full bg-muted group-data-[state=completed]:bg-primary"
+      />
+      <div class="flex flex-col items-center">
+        <StepperTitle>
+          {{ item.title }}
+        </StepperTitle>
+        <StepperDescription>
+          {{ item.description }}
+        </StepperDescription>
+      </div>
+    </StepperItem>
+  </Stepper>
             </div>
             <CodeSnippet code="<script setup>
 const currentStep = ref(1)
@@ -990,19 +975,42 @@ const currentPage = ref(1)
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ChevronRight } from 'lucide-vue-next'
+import { ChevronRight, BookUser, CreditCard, Truck } from 'lucide-vue-next'
 import { toast } from 'vue-sonner'
-
 
 useHead({ title: 'UI Components' })
 
 const numberValue = ref(5)
 const sliderValue = ref([25])
-const toggleValue = ref(false)
 const alertRadioValue = ref('option1')
-const selectedTab = ref('button')
 const currentStep = ref(1)
 const currentPage = ref(1)
+
+const steps = [
+  {
+    step: 1,
+    title: 'Address',
+    description: 'Add your address',
+    icon: BookUser,
+  },
+  {
+    step: 2,
+    title: 'Shipping',
+    description: 'Set your preferred',
+    icon: Truck,
+  },
+  {
+    step: 3,
+    title: 'Payment',
+    description: 'Add any payment',
+    icon: CreditCard,
+  },
+  {
+    step: 4,
+    title: 'Checkout',
+    description: 'Confirm your order',
+  },
+]
 
 const alertRadioOptions = [
   { value: 'option1', label: 'Option 1 - Default choice' },
