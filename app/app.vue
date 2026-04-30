@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import 'vue-sonner/style.css'
 </script>
 
 <template>
@@ -7,8 +8,6 @@
     <NuxtPage />
   </div>
   <ClientOnly>
-    <div id="toast-container" class="fixed bottom-4 right-4 z-50 pointer-events-none">
-      <Toaster />
-    </div>
+    <Toaster />
   </ClientOnly>
 </template>
