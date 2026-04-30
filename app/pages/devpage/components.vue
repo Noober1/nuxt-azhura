@@ -765,20 +765,37 @@ const items = [
           <!-- Stepper -->
           <article class="space-y-4 flex flex-col">
             <TypographyH3>Stepper</TypographyH3>
-            <TypographyP>Multi-step form atau wizard indicator. Props: `steps` (array), `activeStep` (current step index). Support click-through navigation atau sequential. Render step number, label, dan status (pending, active, completed). Ideal untuk sign up flow, checkout process, atau onboarding wizard. Aksesibilitas: aria-current, proper semantic structure.</TypographyP>
+            <TypographyP>Multi-step form atau wizard indicator dengan langkah-langkah yang dapat diklik. Terdiri dari Stepper container dengan StepperItem untuk setiap langkah. Props: StepperItem menerima `:step` prop untuk nomor langkah. Support click-through navigation, menampilkan status (pending, active, completed) per langkah. Ideal untuk sign up flow, checkout process, atau onboarding wizard. Aksesibilitas: keyboard navigation, proper semantic structure.</TypographyP>
             <div class="rounded-lg border p-6 space-y-6 bg-muted/30">
-              <Stepper :steps="['Step 1', 'Step 2', 'Step 3', 'Step 4']" :model-value="currentStep" @update:model-value="(v) => currentStep = v ?? currentStep" />
+              <Stepper v-model="currentStep" class="w-full">
+                <StepperItem v-for="step in 4" :key="step" :step="step">
+                  <StepperTrigger as-child>
+                    <Button :variant="currentStep >= step ? 'default' : 'outline'" size="icon">
+                      {{ step }}
+                    </Button>
+                  </StepperTrigger>
+                  <StepperDescription>
+                    Step {{ step }}
+                  </StepperDescription>
+                  <StepperSeparator v-if="step < 4" />
+                </StepperItem>
+              </Stepper>
+              <TypographyMuted class="text-center">Current step: {{ currentStep }}</TypographyMuted>
             </div>
             <CodeSnippet code="<script setup>
 const currentStep = ref(1)
 </script>
 
 <template>
-  <Stepper
-    :steps=&quot;[\&quot;Step 1\&quot;, \&quot;Step 2\&quot;, \&quot;Step 3\&quot;]&quot;
-    :model-value=&quot;currentStep&quot;
-    @update:model-value=&quot;(v) => currentStep = v ?? currentStep&quot;
-  />
+  <Stepper v-model=&quot;currentStep&quot;>
+    <StepperItem v-for=&quot;step in 4&quot; :key=&quot;step&quot; :step=&quot;step&quot;>
+      <StepperTrigger as-child>
+        <Button>{{ step }}</Button>
+      </StepperTrigger>
+      <StepperDescription>Step {{ step }}</StepperDescription>
+      <StepperSeparator v-if=&quot;step < 4&quot; />
+    </StepperItem>
+  </Stepper>
 </template>" language="vue" />
           </article>
 
