@@ -11,7 +11,9 @@ withDefaults(
   <div :class="[
     'flex',
     orientation === 'horizontal' ? 'flex-row' : 'flex-col',
-    '[&>button]:rounded-none [&>button:first-child]:rounded-l-md [&>button:last-child]:rounded-r-md'
+    orientation === 'horizontal'
+      ? '[&>button]:rounded-none [&>button:first-child]:rounded-l-md [&>button:last-child]:rounded-r-md'
+      : '[&>button]:rounded-none [&>button:first-child]:rounded-t-md [&>button:last-child]:rounded-b-md'
   ]">
     <slot />
   </div>
