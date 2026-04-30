@@ -813,6 +813,16 @@ const currentStep = ref(1)
       </StepperTrigger>
       <StepperSeparator />
     </StepperItem>
+    <StepperItem :step=&quot;2&quot;>
+      <StepperTrigger>
+        <StepperIndicator>2</StepperIndicator>
+        <div>
+          <StepperTitle>Shipping</StepperTitle>
+          <StepperDescription>Set your preferred shipping</StepperDescription>
+        </div>
+      </StepperTrigger>
+      <StepperSeparator />
+    </StepperItem>
   </Stepper>
 </template>" language="vue" />
           </article>
