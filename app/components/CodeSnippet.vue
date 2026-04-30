@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { Copy, Check, Eye, EyeOff } from 'lucide-vue-next'
 import { toast } from 'vue-sonner'
 
@@ -10,8 +10,14 @@ const props = defineProps<{
 
 const isCopied = ref(false)
 const isRaw = ref(false)
+const isClientReady = ref(false)
+
+onMounted(() => {
+  isClientReady.value = true
+})
 
 async function copyToClipboard() {
+  if (!isClientReady.value) return
   try {
     await navigator.clipboard.writeText(props.code)
     isCopied.value = true
@@ -40,8 +46,9 @@ async function copyToClipboard() {
         </button>
         <button
           @click="copyToClipboard"
-          class="p-1.5 rounded hover:bg-muted/50 transition-colors cursor-pointer"
-          :title="isCopied ? 'Copied!' : 'Copy code'"
+          :disabled="!isClientReady"
+          class="p-1.5 rounded hover:bg-muted/50 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+          :title="!isClientReady ? 'Copy (client-only)' : isCopied ? 'Copied!' : 'Copy code'"
         >
           <Check v-if="isCopied" class="h-4 w-4 text-green-500" />
           <Copy v-else class="h-4 w-4 text-muted-foreground hover:text-foreground" />

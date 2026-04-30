@@ -10,6 +10,7 @@ const props = defineProps<AspectRatioProps>()
     v-slot="slotProps"
     data-slot="aspect-ratio"
     v-bind="props"
+    class="p-0"
   >
     <slot v-bind="slotProps" />
   </AspectRatio>
