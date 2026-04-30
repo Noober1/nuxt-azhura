@@ -449,7 +449,7 @@ const options = [
           <!-- Sonner Toast -->
           <article class="space-y-4 flex flex-col">
             <TypographyH3>Sonner Toast</TypographyH3>
-            <TypographyP>Toast notification library untuk menampilkan temporary message di corner layar. Support berbagai type: success, error, warning, info, promise. Props: `message`, `description`, `action`. Aksesibilitas: screen reader announce, auto dismiss setelah timeout. Global `<Toaster />` component di root layout untuk support dari halaman manapun.</TypographyP>
+            <TypographyP>Toast notification library untuk menampilkan temporary message di corner layar. Support berbagai type: success, error, warning, info, promise. Props: `message`, `description`, `action`. Aksesibilitas: screen reader announce, auto dismiss setelah timeout. Toaster component di-setup di root app.vue untuk support dari halaman manapun.</TypographyP>
               <div class="rounded-lg border p-6 flex flex-wrap gap-3 bg-muted/30">
                 <Button
                   @click="toast.success('Success', { description: 'Operation completed!' })"
