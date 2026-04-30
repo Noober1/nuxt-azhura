@@ -453,25 +453,25 @@ const options = [
               <div class="rounded-lg border p-6 flex flex-wrap gap-3 bg-muted/30">
                 <Button
                   @click="toast.success('Success', { description: 'Operation completed!' })"
-                  variant="outline"
+                  class="bg-green-600 hover:bg-green-700 text-white"
                 >
                   Success Toast
                 </Button>
                 <Button
                   @click="toast.error('Error', { description: 'Something went wrong!' })"
-                  variant="outline"
+                  class="bg-red-600 hover:bg-red-700 text-white"
                 >
                   Error Toast
                 </Button>
                 <Button
                   @click="toast.warning('Warning', { description: 'Be careful!' })"
-                  variant="outline"
+                  class="bg-yellow-600 hover:bg-yellow-700 text-white"
                 >
                   Warning Toast
                 </Button>
                 <Button
                   @click="toast('Info', { description: 'Here is some info.' })"
-                  variant="outline"
+                  class="bg-blue-600 hover:bg-blue-700 text-white"
                 >
                   Info Toast
                 </Button>
