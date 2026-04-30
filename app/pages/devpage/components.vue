@@ -765,22 +765,60 @@ const items = [
           <!-- Stepper -->
           <article class="space-y-4 flex flex-col">
             <TypographyH3>Stepper</TypographyH3>
-            <TypographyP>Multi-step form atau wizard indicator dengan langkah-langkah yang dapat diklik. Terdiri dari Stepper container dengan StepperItem untuk setiap langkah. Props: StepperItem menerima `:step` prop untuk nomor langkah. Support click-through navigation, menampilkan status (pending, active, completed) per langkah. Ideal untuk sign up flow, checkout process, atau onboarding wizard. Aksesibilitas: keyboard navigation, proper semantic structure.</TypographyP>
+            <TypographyP>Multi-step form atau wizard indicator dengan langkah-langkah yang dapat diklik. Terdiri dari Stepper container dengan StepperItem untuk setiap langkah. Setiap step menampilkan icon, title, dan description. Support click-through navigation, menampilkan status (pending, active, completed) per langkah. Ideal untuk sign up flow, checkout process, atau onboarding wizard. Aksesibilitas: keyboard navigation, proper semantic structure.</TypographyP>
             <div class="rounded-lg border p-6 space-y-6 bg-muted/30">
               <Stepper v-model="currentStep" class="w-full">
-                <StepperItem v-for="step in 4" :key="step" :step="step">
+                <StepperItem :step="1">
                   <StepperTrigger as-child>
-                    <Button :variant="currentStep >= step ? 'default' : 'outline'" size="icon">
-                      {{ step }}
+                    <Button variant="outline" size="icon">
+                      1
                     </Button>
                   </StepperTrigger>
-                  <StepperDescription>
-                    Step {{ step }}
-                  </StepperDescription>
-                  <StepperSeparator v-if="step < 4" />
+                  <div>
+                    <StepperTitle>Address</StepperTitle>
+                    <StepperDescription>Add your address</StepperDescription>
+                  </div>
+                  <StepperSeparator />
+                </StepperItem>
+
+                <StepperItem :step="2">
+                  <StepperTrigger as-child>
+                    <Button variant="outline" size="icon">
+                      2
+                    </Button>
+                  </StepperTrigger>
+                  <div>
+                    <StepperTitle>Shipping</StepperTitle>
+                    <StepperDescription>Set your preferred shipping</StepperDescription>
+                  </div>
+                  <StepperSeparator />
+                </StepperItem>
+
+                <StepperItem :step="3">
+                  <StepperTrigger as-child>
+                    <Button variant="outline" size="icon">
+                      3
+                    </Button>
+                  </StepperTrigger>
+                  <div>
+                    <StepperTitle>Payment</StepperTitle>
+                    <StepperDescription>Add any payment method</StepperDescription>
+                  </div>
+                  <StepperSeparator />
+                </StepperItem>
+
+                <StepperItem :step="4">
+                  <StepperTrigger as-child>
+                    <Button variant="outline" size="icon">
+                      4
+                    </Button>
+                  </StepperTrigger>
+                  <div>
+                    <StepperTitle>Checkout</StepperTitle>
+                    <StepperDescription>Confirm your order</StepperDescription>
+                  </div>
                 </StepperItem>
               </Stepper>
-              <TypographyMuted class="text-center">Current step: {{ currentStep }}</TypographyMuted>
             </div>
             <CodeSnippet code="<script setup>
 const currentStep = ref(1)
@@ -788,12 +826,15 @@ const currentStep = ref(1)
 
 <template>
   <Stepper v-model=&quot;currentStep&quot;>
-    <StepperItem v-for=&quot;step in 4&quot; :key=&quot;step&quot; :step=&quot;step&quot;>
+    <StepperItem :step=&quot;1&quot;>
       <StepperTrigger as-child>
-        <Button>{{ step }}</Button>
+        <Button variant=&quot;outline&quot; size=&quot;icon&quot;>1</Button>
       </StepperTrigger>
-      <StepperDescription>Step {{ step }}</StepperDescription>
-      <StepperSeparator v-if=&quot;step < 4&quot; />
+      <div>
+        <StepperTitle>Address</StepperTitle>
+        <StepperDescription>Add your address</StepperDescription>
+      </div>
+      <StepperSeparator />
     </StepperItem>
   </Stepper>
 </template>" language="vue" />
