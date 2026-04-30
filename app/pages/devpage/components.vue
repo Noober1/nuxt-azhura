@@ -887,7 +887,7 @@ import {
           <!-- Carousel -->
           <article class="space-y-4 flex flex-col">
             <TypographyH3>Carousel</TypographyH3>
-            <TypographyP>Image/content slider dengan auto-scroll dan manual navigation (prev/next). Support touch swipe di mobile, keyboard navigation (arrow), dan pagination dots. Props: `autoplay`, `delay`, `loop`. Ideal untuk image gallery, feature showcase, atau testimonial slides. Accessibility: proper focus management, skip links untuk nav buttons.</TypographyP>
+            <TypographyP>Image/content slider dengan navigation buttons (prev/next). Support touch swipe di mobile, keyboard navigation, dan responsive sizing dengan Embla carousel library. Props: `orientation` (horizontal/vertical), `:opts` untuk Embla options (loop, align, etc), `:plugins` untuk tambahan fitur. Ideal untuk image gallery, feature showcase, atau testimonial slides. Accessibility: proper focus management dan keyboard controls.</TypographyP>
             <div class="rounded-lg border p-6 bg-muted/30">
               <Carousel class="w-full">
                 <CarouselContent>
@@ -901,17 +901,30 @@ import {
                 <CarouselNext />
               </Carousel>
             </div>
-            <CodeSnippet code="<Carousel class=&quot;w-full&quot;>
-  <CarouselContent>
-    <CarouselItem v-for=&quot;i in 5&quot; :key=&quot;i&quot;>
-      <div class=&quot;aspect-video flex items-center justify-center bg-muted&quot;>
-        Slide \{\{ i \}\}
-      </div>
-    </CarouselItem>
-  </CarouselContent>
-  <CarouselPrevious />
-  <CarouselNext />
-</Carousel>" language="vue" />
+            <CodeSnippet code="<script setup>
+import { ref } from 'vue'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel'
+</script>
+
+<template>
+  <Carousel class=&quot;w-full&quot;>
+    <CarouselContent>
+      <CarouselItem v-for=&quot;i in 5&quot; :key=&quot;i&quot; class=&quot;basis-full&quot;>
+        <div class=&quot;flex aspect-video items-center justify-center bg-muted rounded-lg&quot;>
+          <span class=&quot;text-2xl font-semibold&quot;>Slide {{ i }}</span>
+        </div>
+      </CarouselItem>
+    </CarouselContent>
+    <CarouselPrevious />
+    <CarouselNext />
+  </Carousel>
+</template>" language="vue" />
           </article>
         </section>
 
