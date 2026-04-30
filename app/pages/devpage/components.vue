@@ -831,27 +831,56 @@ const steps = [
           <!-- Pagination -->
           <article class="space-y-4 flex flex-col">
             <TypographyH3>Pagination</TypographyH3>
-            <TypographyP>Navigation untuk data list besar dengan multiple page. Props: `page`, `totalPages`, `maxVisible`. Support next, previous, dan direct page click. Aksesibilitas: keyboard navigation, aria-label, aria-current="page". Ideal untuk table view, product list, atau search results. Disable prev/next button saat di first/last page.</TypographyP>
+            <TypographyP>Navigation untuk data list besar dengan multiple page. Terdiri dari Pagination container dengan PaginationContent yang render items. Support PaginationPrevious, PaginationNext, dan PaginationEllipsis untuk navigasi. Props: `total`, `items-per-page`, `default-page`. Aksesibilitas: keyboard navigation, aria-label, aria-current="page". Ideal untuk table view, product list, atau search results.</TypographyP>
             <div class="rounded-lg border p-6 space-y-6 bg-muted/30">
-              <Pagination
-                :page="currentPage"
-                :total-items="50"
-                :items-per-page="10"
-                :max-visible-buttons="5"
-              />
-              <TypographyMuted>Current page: {{ currentPage }}</TypographyMuted>
+              <Pagination v-slot="{ page }" :items-per-page="10" :total="30" :default-page="1">
+                <PaginationContent v-slot="{ items }">
+                  <PaginationPrevious />
+
+                  <template v-for="(item, index) in items" :key="index">
+                    <PaginationItem
+                      v-if="item.type === 'page'"
+                      :value="item.value"
+                      :is-active="item.value === page"
+                    >
+                      {{ item.value }}
+                    </PaginationItem>
+                  </template>
+
+                  <PaginationEllipsis :index="4" />
+
+                  <PaginationNext />
+                </PaginationContent>
+              </Pagination>
             </div>
             <CodeSnippet code="<script setup>
-const currentPage = ref(1)
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationNext,
+  PaginationPrevious,
+} from '@/components/ui/pagination'
 </script>
 
 <template>
-  <Pagination
-    :page=&quot;currentPage&quot;
-    :total-items=&quot;50&quot;
-    :items-per-page=&quot;10&quot;
-    :max-visible-buttons=&quot;5&quot;
-  />
+  <Pagination v-slot=&quot;{ page }&quot; :items-per-page=&quot;10&quot; :total=&quot;30&quot; :default-page=&quot;1&quot;>
+    <PaginationContent v-slot=&quot;{ items }&quot;>
+      <PaginationPrevious />
+      <template v-for=&quot;(item, index) in items&quot; :key=&quot;index&quot;>
+        <PaginationItem
+          v-if=&quot;item.type === 'page'&quot;
+          :value=&quot;item.value&quot;
+          :is-active=&quot;item.value === page&quot;
+        >
+          {{ item.value }}
+        </PaginationItem>
+      </template>
+      <PaginationEllipsis :index=&quot;4&quot; />
+      <PaginationNext />
+    </PaginationContent>
+  </Pagination>
 </template>" language="vue" />
           </article>
 
@@ -995,7 +1024,6 @@ const numberValue = ref(5)
 const sliderValue = ref([25])
 const alertRadioValue = ref('option1')
 const currentStep = ref(1)
-const currentPage = ref(1)
 
 const steps = [
   {
