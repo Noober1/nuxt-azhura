@@ -13,5 +13,7 @@ import { useIsDarkMode } from './composables/states';
     <div>
       <NuxtPage/>
     </div>
-    <Toaster />
+    <ClientOnly>
+      <Toaster />
+    </ClientOnly>
 </template>
