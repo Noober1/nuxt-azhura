@@ -150,7 +150,7 @@
                 <span class="text-sm">Off</span>
               </div>
               <div class="flex items-center gap-3">
-                <Switch :defaultChecked="true" />
+                <Switch :model-value="true" />
                 <span class="text-sm">On</span>
               </div>
               <div class="flex items-center gap-3">
@@ -159,12 +159,16 @@
               </div>
             </div>
             <CodeSnippet code="<div class=&quot;flex items-center gap-3&quot;>
-  <Switch :defaultChecked=&quot;true&quot; />
+  <Switch :model-value=&quot;true&quot; />
   <span>On</span>
 </div>
 <div class=&quot;flex items-center gap-3&quot;>
   <Switch />
   <span>Off</span>
+</div>
+<div class=&quot;flex items-center gap-3&quot;>
+  <Switch disabled />
+  <span class=&quot;text-muted-foreground&quot;>Disabled</span>
 </div>" language="vue" />
           </article>
 

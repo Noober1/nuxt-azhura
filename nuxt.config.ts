@@ -25,7 +25,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['./app/assets/css/main.css'],
 
-  modules: ['shadcn-nuxt'],
+  modules: [
+    'shadcn-nuxt',
+    ['@nuxtjs/color-mode', { classSuffix: '' }],
+  ],
 
   shadcn: {
     prefix: '',
