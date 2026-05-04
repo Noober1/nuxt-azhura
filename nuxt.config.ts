@@ -28,6 +28,7 @@ export default defineNuxtConfig({
   modules: [
     'shadcn-nuxt',
     ['@nuxtjs/color-mode', { classSuffix: '' }],
+    'lenis/nuxt'
   ],
 
   shadcn: {
