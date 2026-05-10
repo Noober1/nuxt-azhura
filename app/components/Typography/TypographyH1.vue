@@ -1,5 +1,11 @@
+
+<script setup lang="ts">
+    import { motion } from 'motion-v'
+</script>
+
 <template>
-  <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+  <motion.h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl" v-bind="$props">
     <slot />
-  </h1>
+  </motion.h1>
 </template>
+

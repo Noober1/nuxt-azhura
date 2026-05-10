@@ -140,6 +140,54 @@
 </ButtonGroup>" language="vue" />
           </article>
 
+          <!-- Icon Button -->
+          <article class="space-y-4 flex flex-col">
+            <div class="flex flex-col gap-1">
+              <TypographyH3>Icon Button</TypographyH3>
+              <TypographyP>Button yang hanya menampilkan icon tanpa label teks. Props: `variant` (default, secondary, destructive), `size` (xs, sm, md, lg). Dibangun di atas `Primitive` dari reka-ui sehingga mendukung prop `as` untuk render sebagai element lain. Cocok untuk toolbar action, icon-only CTA, atau floating action button.</TypographyP>
+            </div>
+            <div class="rounded-lg border p-6 space-y-6 bg-muted/30">
+              <div>
+                <TypographyMuted class="mb-3">Small (size="sm")</TypographyMuted>
+                <div class="flex gap-4">
+                  <IconButton variant="default" size="sm"><Star /></IconButton>
+                  <IconButton variant="secondary" size="sm"><Heart /></IconButton>
+                  <IconButton variant="destructive" size="sm"><Trash2 /></IconButton>
+                </div>
+              </div>
+              <div>
+                <TypographyMuted class="mb-3">Medium / Default</TypographyMuted>
+                <div class="flex gap-4">
+                  <IconButton variant="default"><Settings /></IconButton>
+                  <IconButton variant="secondary"><Bell /></IconButton>
+                  <IconButton variant="destructive"><AlertTriangle /></IconButton>
+                </div>
+              </div>
+              <div>
+                <TypographyMuted class="mb-3">Large (size="lg")</TypographyMuted>
+                <div class="flex gap-4">
+                  <IconButton variant="default" size="lg"><Download /></IconButton>
+                  <IconButton variant="secondary" size="lg"><Share2 /></IconButton>
+                  <IconButton variant="destructive" size="lg"><Flame /></IconButton>
+                </div>
+              </div>
+            </div>
+            <CodeSnippet code="&lt;!-- Small --&gt;
+&lt;IconButton variant=&quot;default&quot; size=&quot;sm&quot;&gt;&lt;Star /&gt;&lt;/IconButton&gt;
+&lt;IconButton variant=&quot;secondary&quot; size=&quot;sm&quot;&gt;&lt;Heart /&gt;&lt;/IconButton&gt;
+&lt;IconButton variant=&quot;destructive&quot; size=&quot;sm&quot;&gt;&lt;Trash2 /&gt;&lt;/IconButton&gt;
+
+&lt;!-- Medium (default) --&gt;
+&lt;IconButton variant=&quot;default&quot;&gt;&lt;Settings /&gt;&lt;/IconButton&gt;
+&lt;IconButton variant=&quot;secondary&quot;&gt;&lt;Bell /&gt;&lt;/IconButton&gt;
+&lt;IconButton variant=&quot;destructive&quot;&gt;&lt;AlertTriangle /&gt;&lt;/IconButton&gt;
+
+&lt;!-- Large --&gt;
+&lt;IconButton variant=&quot;default&quot; size=&quot;lg&quot;&gt;&lt;Download /&gt;&lt;/IconButton&gt;
+&lt;IconButton variant=&quot;secondary&quot; size=&quot;lg&quot;&gt;&lt;Share2 /&gt;&lt;/IconButton&gt;
+&lt;IconButton variant=&quot;destructive&quot; size=&quot;lg&quot;&gt;&lt;Flame /&gt;&lt;/IconButton&gt;" language="vue" />
+          </article>
+
           <!-- Switch -->
           <article class="space-y-4 flex flex-col">
             <TypographyH3>Switch</TypographyH3>
@@ -1032,7 +1080,8 @@ import {
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { ChevronRight, BookUser, CreditCard, Truck } from 'lucide-vue-next'
+import { ChevronRight, BookUser, CreditCard, Truck, Star, Heart, Trash2, Settings, Bell, AlertTriangle, Download, Share2, Flame } from 'lucide-vue-next'
+import { IconButton } from '@/components/ui/button'
 import { toast } from 'vue-sonner'
 
 useHead({ title: 'UI Components' })
