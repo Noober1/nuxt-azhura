@@ -26,9 +26,10 @@ export default defineNuxtConfig({
   css: ['./app/assets/css/main.css'],
 
   modules: [
-    'shadcn-nuxt',
     ['@nuxtjs/color-mode', { classSuffix: '' }],
-    'lenis/nuxt'
+    'shadcn-nuxt',
+    'motion-v/nuxt',
+    'lenis/nuxt',
   ],
 
   shadcn: {
@@ -40,7 +41,7 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: [
         '@vue/devtools-core',
-        '@vue/devtools-kit',
+        '@vue/devtools-kit'
       ]
     },
     plugins: [
